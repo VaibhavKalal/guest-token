@@ -1,0 +1,51 @@
+{
+  "version": "0.0.0",
+  "keywords": [],
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "test:ts:back": "run -T tsc -p server/tsconfig.json"
+  },
+  "dependencies": {
+    "@node-oauth/oauth2-server": "5.2.0",
+    "@strapi/utils": "5.10.3",
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^5.3.1",
+    "@strapi/strapi": "^5.10.2",
+    "@strapi/typescript-utils": "^5.10.2",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "@strapi/sdk-plugin": "^5.3.1",
+    "@strapi/strapi": "^5.10.2"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "guest-token",
+    "displayName": "Guest Token",
+    "description": "Basic guest token implementation"
+  },
+  "name": "guest-token",
+  "description": "Basic guest token implementation",
+  "license": "MIT",
+  "author": "vaibhav <kalalvaibhav@gmail.com>"
+}
